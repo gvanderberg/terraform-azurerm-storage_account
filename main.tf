@@ -24,7 +24,7 @@ resource "azurerm_storage_account" "this" {
   dynamic "static_website" {
     for_each = var.website[*]
     content {
-      index_document = website.value.index_document
+      index_document = static_website.value.index_document
     }
   }
 
