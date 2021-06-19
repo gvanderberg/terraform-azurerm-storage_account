@@ -21,5 +21,12 @@ resource "azurerm_storage_account" "this" {
     type = "SystemAssigned"
   }
 
+  dynamic "static_website" {
+    for_each = var.website[*]
+    content {
+      index_document = website.value.index_document
+    }
+  }
+
   tags = var.tags
 }

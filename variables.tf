@@ -33,6 +33,14 @@ variable "storage_account_name" {
   type        = string
 }
 
+variable "website" {
+  type = object({
+    index_document = string
+    error_document = string
+  })
+  default = null
+}
+
 variable "tags" {
   description = "A mapping of tags to assign to the resource."
   type        = map(any)
