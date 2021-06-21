@@ -36,6 +36,7 @@ variable "storage_account_name" {
 variable "website" {
   type = object({
     index_document = string
+    error_404_document = string
   })
   default = null
 }

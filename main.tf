@@ -25,6 +25,7 @@ resource "azurerm_storage_account" "this" {
     for_each = var.website[*]
     content {
       index_document = static_website.value.index_document
+      error_404_document = static_website.value.error_404_document
     }
   }
 
